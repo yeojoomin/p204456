@@ -1,6 +1,26 @@
-*.class
-
-# Package Files #
-*.jar
-*.war
-*.ear
+public int[] digitExtractor(int numbber)
+{
+  int number= numbber;
+  if(number<0)
+  {
+    number*=-1;
+  }
+  int n= number;
+  int digitnum=1;
+  while (n>10)
+  {
+    n/=10;
+    digitnum++;
+  }
+  int[] ary = new int[digitnum];
+  for (int x=0; x<digitnum;x++)
+  {
+    ary[x]=number%10;
+    number/=10;
+  }
+  if(numbber<0)
+  {
+    ary[ary.length-1]*=-1;
+  }
+  return ary;
+}
